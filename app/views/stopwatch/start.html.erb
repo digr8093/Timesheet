@@ -1,0 +1,38 @@
+
+
+<h1>Stopwatch#start</h1>
+<p>Find me in app/views/stopwatch/start.html.erb</p>
+
+<%= @start %> <br>
+
+<%= link_to('stop', stopwatch_stop_url ) %>
+
+
+<%= javascript_tag do %>
+    window.swURL = "<%= j stopwatch_start_url %>";
+    <!-- window.products = erb raw Product.limit(10).to_json erb-->
+<% end%>
+
+
+<div id="sw" data-url="<%=stopwatch_start_url %>">
+  Loading Time
+</div>
+
+
+
+
+
+
+<%= content_tag "div", id: "muh_sw2", data: {url: stopwatch_start_url} do %>
+
+
+loading motha effer, chill ouuut
+
+
+<% end%>
+
+
+
+
+
+
