@@ -7,8 +7,9 @@
 
 jQuery ->
   #  alert swURL
-
  #   alert $('#sw').data('url')
+
+  startTime =0;
 
 
   $('#startBtn').click ->
@@ -25,12 +26,28 @@ jQuery ->
 
     return
 
-    $('#stopBtn').click ->
+
+
+  $('#stopBtn').click ->
 #  $(this).addClass('tabs_selected')
 #  $('.tabs_video').removeClass('tabs_selected')
 #  $('#image_upload_form').show()
 #  $('#video_upload_form').hide()
 
-    alert $('#muh_sw2').data('url')
+    stopTime = new Date();
+
+    console.log("hi");
+
+    interval = stopTime - startTime;
+    console.log(interval);
+
+    date = new Date(interval);
+    h = date.getHours();
+    m = date.getMinutes();
+    s = date.getSeconds();
+    #alert(((h * 60) + m) + ":" + s);
+    alert("min: " + m + " seconds: " + s);
+
+
 
     return
