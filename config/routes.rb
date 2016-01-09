@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :time_entries
   get 'stopwatch/start'
-
+  post 'stopwatch/start/:final_time' => 'stopwatch#start', :as => 'sw_post'
+  post 'stopwatch/start' => 'stopwatch#start', :as => 'sw_post2'
   get 'stopwatch/stop'
 
   get 'stopwatch/format'

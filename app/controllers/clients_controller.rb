@@ -5,6 +5,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
+
   end
 
   # GET /clients/1
@@ -15,6 +16,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+
   end
 
   # GET /clients/1/edit
@@ -66,6 +68,8 @@ class ClientsController < ApplicationController
     def set_client
       @client = Client.find(params[:id])
     end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params

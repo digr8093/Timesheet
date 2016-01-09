@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  time: 2015-12-05 11:39:08
+  date: 2015-12-05
+  comment: MyText
+  tag: MyText
+  time_dec: 9.99
+
+two:
+  name: MyText
+  time: 2015-12-05 11:39:08
+  date: 2015-12-05
+  comment: MyText
+  tag: MyText
+  time_dec: 9.99

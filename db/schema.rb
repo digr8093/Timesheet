@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120032437) do
+ActiveRecord::Schema.define(version: 20151229035701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20151120032437) do
     t.decimal  "hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "clients_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -42,4 +43,23 @@ ActiveRecord::Schema.define(version: 20151120032437) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "time_entries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "time"
+    t.date     "date"
+    t.text     "comment"
+    t.text     "tag"
+    t.decimal  "time_dec"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "hours"
+    t.integer  "mins"
+    t.integer  "sec"
+    t.integer  "project_id"
+    t.integer  "client_id"
+    t.text     "divide_by"
+  end
+
+  add_foreign_key "time_entries", "clients"
+  add_foreign_key "time_entries", "projects"
 end

@@ -22,32 +22,49 @@ jQuery ->
     stopped = false;
     console.log(startTime);
 
-   # alert $('#muh_sw2').data('url')
-
     return
 
 
 
   $('#stopBtn').click ->
-#  $(this).addClass('tabs_selected')
-#  $('.tabs_video').removeClass('tabs_selected')
-#  $('#image_upload_form').show()
-#  $('#video_upload_form').hide()
-
     stopTime = new Date();
 
-    console.log("hi");
+    interval  = stopTime - startTime;
+    x         = interval/1000;
 
-    interval = stopTime - startTime;
-    console.log(interval);
+    s_c = Math.round(x % 60);
+    x   = Math.round(x / 60);
+    m_c = Math.round(x % 60);
+    x   = Math.round(x / 60);
+    h_c = Math.round(x % 24);
 
-    date = new Date(interval);
-    h = date.getHours();
-    m = date.getMinutes();
-    s = date.getSeconds();
-    #alert(((h * 60) + m) + ":" + s);
-    alert("min: " + m + " seconds: " + s);
+    $("#time_entry_sec").val(s_c);
+    $("#time_entry_hours").val(h_c);
+    $("#time_entry_mins").val(m_c);
+
+    $(result).text(interval);
+
+    return
+
+  $(".clients").click ->
+    countClients = $(":checkbox").length
+
+    node = document.getElementById("clients").getElementsByTagName("input")
+    console.log "check me"
+    console.log countClients
+    console.log node
+    countChecks = 0
+   # for i in [0..countClients-1]# when number >5
+    #  console.log node[i].checked
+     # if node[i].checked is true
+      #  countChecks = countChecks + 1
+
+
+    $("#time_entry_divide_by").val(countChecks);
+
+
 
 
 
     return
+
