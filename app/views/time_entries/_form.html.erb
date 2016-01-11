@@ -16,8 +16,8 @@
     <% @clients.each do |client| %>
           <b><%= client.name %></b>
           <ul style="list-style-type:none">
-          <% client.all_projects(client.id).each do |project| %>
-              <li><%= f.check_box :project, :checked => false, :value=>project.name %><%= label_tag project.name %></li>
+          <% all_projects(client.id).each do |project| %>
+              <li><input id="time_entry[project]" type="checkbox" name=<%= project.name %> value=<%= project.id %> > <%= project.name %><br></li>
                 <% end %>
           </ul>
       <% end %>
@@ -29,10 +29,7 @@
     <%= f.text_area :comment %>
   </div>
 
-  <div class="field">
-    <%= f.label :time_dec %><br>
-    <%= f.text_field :time_dec %>
-  </div>
+
 
     <div class="field">
       <%= f.label :hours %><br>

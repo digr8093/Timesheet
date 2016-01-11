@@ -6,13 +6,28 @@
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @time_entry.time %>
+  <strong>ID:</strong>
+  <%= @time_entry.id %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @time_entry.hours %>
+</p>
+
+<p>
+  <strong>Mins:</strong>
+  <%= @time_entry.mins %>
+</p>
+
+<p>
+  <strong>Seconds:</strong>
+  <%= @time_entry.sec %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @time_entry.date %>
+  <%= @time_entry.created_at %>
 </p>
 
 <p>
@@ -26,9 +41,14 @@
 </p>
 
 <p>
-  <strong>Time dec:</strong>
-  <%= @time_entry.time_dec %>
+  <strong>Divider:</strong>
+  <%= @time_entry.divide_by %>
 </p>
+
+<%= params.inspect %>
+
+
+Need to add in clients
 
 <%= link_to 'Edit', edit_time_entry_path(@time_entry) %> |
 <%= link_to 'Back', time_entries_path %>

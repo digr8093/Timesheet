@@ -6,17 +6,9 @@
 
 
 jQuery ->
-  #  alert swURL
- #   alert $('#sw').data('url')
-
   startTime =0;
 
-
   $('#startBtn').click ->
-  #  $(this).addClass('tabs_selected')
-  #  $('.tabs_video').removeClass('tabs_selected')
-  #  $('#image_upload_form').show()
-  #  $('#video_upload_form').hide()
 
     startTime = new Date();
     stopped = false;
@@ -47,24 +39,19 @@ jQuery ->
     return
 
   $(".clients").click ->
-    countClients = $(":checkbox").length
 
+    divider = $(this).find('input[id="time_entry[project]"]:checked').length
     node = document.getElementById("clients").getElementsByTagName("input")
-    console.log "check me"
-    console.log countClients
-    console.log node
-    countChecks = 0
-   # for i in [0..countClients-1]# when number >5
-    #  console.log node[i].checked
-     # if node[i].checked is true
-      #  countChecks = countChecks + 1
-
-
-    $("#time_entry_divide_by").val(countChecks);
-
-
-
-
+    $("#time_entry_divide_by").val(divider);
 
     return
+
+  $('#resetBtn').click ->
+    startTime =0;
+
+    $("#time_entry_sec").val(0);
+    $("#time_entry_hours").val(0);
+    $("#time_entry_mins").val(0);
+    return
+
 

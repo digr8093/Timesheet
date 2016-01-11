@@ -10,7 +10,9 @@
       <th>Date</th>
       <th>Comment</th>
       <th>Tag</th>
-      <th>Time dec</th>
+      <th>Hours</th>
+      <th>Mins</th>
+      <th>Sec</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,7 +25,10 @@
         <td><%= time_entry.date %></td>
         <td><%= time_entry.comment %></td>
         <td><%= time_entry.tag %></td>
-        <td><%= time_entry.time_dec %></td>
+        <td><%= time_entry.hours %></td>
+        <td><%= time_entry.mins %></td>
+        <td><%= time_entry.sec %></td>
+        <td><%= time_entry.projects %></td>
         <td><%= link_to 'Show', time_entry %></td>
         <td><%= link_to 'Edit', edit_time_entry_path(time_entry) %></td>
         <td><%= link_to 'Destroy', time_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>

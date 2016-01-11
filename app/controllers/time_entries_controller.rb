@@ -71,6 +71,6 @@ class TimeEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def time_entry_params
-      params.require(:time_entry).permit(:name, :time, :date, :comment, :tag, :time_dec, :sec, :hours, :mins, :divide_by)
+      params.require(:time_entry).permit(:name, :time, :date, :comment, :tag, :time_dec, :sec, :hours, :mins, :divide_by, :projects)
     end
 end
